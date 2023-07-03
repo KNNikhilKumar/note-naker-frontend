@@ -21,11 +21,18 @@ const onSubmit=async (e)=>{
             },
             body:JSON.stringify(newuser)
         });
+      
+        if(resp.status==200)
+        {
+          localStorage.setItem('user',JSON.stringify(newuser));
 
-      localStorage.setItem('user',JSON.stringify(newuser));
-
-        console.log(resp.status);
-        navigate('/');
+          console.log(resp.status);
+          navigate('/');
+        }
+        else
+        {
+            alert('user already present please login');
+        }
 
     }
     else
