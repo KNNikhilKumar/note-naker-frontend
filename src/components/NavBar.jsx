@@ -17,7 +17,7 @@ const NavBar = () => {
   return (
     <Navbar bg="light" data-bs-theme="light">
     <Container>
-      <Navbar.Brand>NOTE MAKER</Navbar.Brand>
+      <Navbar.Brand>SIMPLE NOTE MAKER</Navbar.Brand>
       <Nav className="me-auto">
         {isLogged&&<Button variant="success" size='sm' onClick={addNewNote}>  {" Add Note"}  </Button>}
         {isLogged&&<Navbar.Text>{isLogged.email}</Navbar.Text>}
