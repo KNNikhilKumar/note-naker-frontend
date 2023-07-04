@@ -23,7 +23,7 @@ useEffect(()=>{
       }
       else
       {
-        const resp=await fetch('http://localhost:8000/newnote',{
+        const resp=await fetch('https://note-maker-api.onrender.com/newnote',{
           method:'POST',
           headers:{
             'Content-Type':'application/json',

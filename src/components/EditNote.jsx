@@ -13,7 +13,7 @@ const EditNote = () => {
 
   const modifyNote=async ()=>{
 
-      const resp=await fetch('http://localhost:8000/edit',{
+      const resp=await fetch('https://note-maker-api.onrender.com/edit',{
         method:"PUT",
         headers:{
           "email":location.state.email,

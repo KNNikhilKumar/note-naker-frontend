@@ -11,7 +11,7 @@ const navigate=useNavigate();
   }
 
   const onClickDeleteButton=async ()=>{
-      const resp=await fetch('http://localhost:8000/delete',{
+      const resp=await fetch('https://note-maker-api.onrender.com/delete',{
         method:'DELETE',
         headers:{
           'email':location.state.email,

@@ -14,7 +14,7 @@ const onSubmit=async (e)=>{
         email:e.target.email.value,
         password:e.target.password.value
       };
-        const resp=await fetch('http://localhost:8000/register',{
+        const resp=await fetch('https://note-maker-api.onrender.com/register',{
             method:'POST',
             headers:{
               'Content-Type':'application/json'
@@ -47,7 +47,7 @@ const onSubmit=async (e)=>{
     <Form onSubmit={onSubmit}>
     <Row>
     <Col></Col>
-        <Col><h2>Register</h2></Col>
+        <Col><br /><br /><h2>Register</h2></Col>
         <Col></Col>
     </Row>
      <Row>

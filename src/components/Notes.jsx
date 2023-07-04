@@ -11,7 +11,7 @@ const Notes = () => {
     const getNotes=async ()=>{
 
       const user=await JSON.parse(localStorage.getItem("user")).email;
-      const url=`http://localhost:8000/notes?user=${user}`;
+      const url=`https://note-maker-api.onrender.com/notes?user=${user}`;
       const data=await fetch(url,{
         headers:{
           "accessToken":User.accessToken,
