@@ -5,6 +5,7 @@ const FullNote = () => {
 const location=useLocation();
 const navigate=useNavigate();
 
+  const User=JSON.parse(localStorage.getItem('user'));
   const onClickEditButton=()=>{
       navigate('/edit',{state:location.state});
   }
@@ -14,7 +15,8 @@ const navigate=useNavigate();
         method:'DELETE',
         headers:{
           'email':location.state.email,
-          '_id':location.state._id
+          '_id':location.state._id,
+          'accessToken':User.accessToken
         }
       });
       console.log(resp.json());

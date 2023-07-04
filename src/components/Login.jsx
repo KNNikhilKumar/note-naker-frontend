@@ -21,10 +21,11 @@ const onSubmit=async (e)=>{
             },
             body:JSON.stringify(user)
         });
+        const userData=await resp.json();
 
         if(resp.status==200)
         {
-          localStorage.setItem('user',JSON.stringify(user));
+          localStorage.setItem('user',JSON.stringify(userData));
 
           console.log(resp.status);
           navigate('/');

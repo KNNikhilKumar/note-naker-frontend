@@ -8,6 +8,7 @@ const EditNote = () => {
 
   const [noteTitle,noteTitleChange]=useState(location.state.title);
   const [noteContent,noteContentChange]=useState(location.state.content)
+  const User=JSON.parse(localStorage.getItem('user'));
 
 
   const modifyNote=async ()=>{
@@ -17,7 +18,8 @@ const EditNote = () => {
         headers:{
           "email":location.state.email,
           "_id":location.state._id,
-          "Content-Type":"application/json"
+          "Content-Type":"application/json",
+          'accessToken':User.accessToken
         },
         body:JSON.stringify({
           title:noteTitle,

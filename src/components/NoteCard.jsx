@@ -11,7 +11,7 @@ const NoteCard = ({note}) => {
     <div class="card">
     <div class="card-body">
       <h5 class="card-title">{note.title}</h5>
-      <p class="card-text">{note.content}</p>
+      <p class="card-text">{(note.content.length>250)?(note.content.substring(0,250)+"..."):(note.content)}</p>
       <a href="" class="btn btn-primary" onClick={()=>viewFullPage(note)}>EXPAND</a>
     </div>
     <div class="card-footer text-muted">

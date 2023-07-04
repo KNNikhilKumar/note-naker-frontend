@@ -7,7 +7,7 @@ const NewNote = () => {
 const navigate=useNavigate();
 let user={};
 useEffect(()=>{
-  user=JSON.parse(localStorage.getItem('user')).email;
+  user=JSON.parse(localStorage.getItem('user'));
 },[]);
 
   const submitForm=async (e)=>{
@@ -15,7 +15,7 @@ useEffect(()=>{
       const newnote={
         title:e.target.title.value,
         content:e.target.content.value,
-        email:user
+        email:user.email
       };
       if(newnote.title.trim()==""||newnote.content.trim()=="")
       {
@@ -26,7 +26,9 @@ useEffect(()=>{
         const resp=await fetch('http://localhost:8000/newnote',{
           method:'POST',
           headers:{
-            'Content-Type':'application/json'
+            'Content-Type':'application/json',
+           'accessToken':user.accessToken,
+           "email":user.email
           },
           body:JSON.stringify(newnote)
         });
